@@ -1,0 +1,34 @@
+<div class="container" *ngIf="(translate | async).content as t">
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <h2 id="pageName">{{t.forecast}}</h2>
+      <form [formGroup]="searchForm">
+        <input type="text" formControlName="forecastCity" name="forecastCity">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm12 col-md-12 col-lg-12">
+      <div class="row" *ngIf="forecast | async as result">
+        <div class="col-sm12 col-md-12 col-lg-12" *ngIf="result[city]">
+          <h2 id="location"><span class="badge badge-info">{{t.location}}</span>  {{result[city].location.name}} / <small>{{t.country}}</small> {{result[city].location.country}}</h2>
+        </div>
+        <div class="card col-md-2" *ngFor="let forecast of result[city]?.forecast.forecastday">
+          <div class="card-header row">{{t.day}} {{forecast.date}}</div>
+          <div class="card-block">
+            <p class="card-text">{{t.temperature }}</p>
+            <p class="card-text">{{forecast.day.mintemp_c}} - {{forecast.day.maxtemp_c}}</p>
+          </div>
+        </div>
+        <div *ngIf="result.showError">
+          <div class="col-sm12 col-md-12 col-lg-12">
+            <h2><span class="badge badge-warning">{{t.errorMessage+':  '+city}}</span></h2>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+

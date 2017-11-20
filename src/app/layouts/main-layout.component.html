@@ -1,0 +1,22 @@
+<div id="holder" *ngIf="(translate | async).content as t">
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <div class="btn-group pull-right" dropdown>
+      <a class="navbar-brand" href="#">WEATHER App</a>
+      <button dropdownToggle class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <ul *dropdownMenu class="dropdown-menu" role="menu">
+        <li role="menuitem"><a class="dropdown-item" [routerLink]="['/main']">{{t.main}}</a></li>
+        <li role="menuitem"><a class="dropdown-item" [routerLink]="['/forecast']" >{{t.forecast}}</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div id="body">
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <footer class="text-center">
+    <p class="footer">Copyright by Svitlana</p>
+  </footer>
+</div>

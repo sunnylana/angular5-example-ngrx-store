@@ -1,0 +1,10 @@
+{
+  "Main": "Main Page",
+  "Weather": "Weather",
+  "Location": "Location",
+  "Day": "Day",
+  "Temperature": "Temperature",
+  "country": "country",
+  "errorMessage": "no such city",
+  "Forecast": "Forecast"
+}

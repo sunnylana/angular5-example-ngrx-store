@@ -1,0 +1,10 @@
+{
+  "Main": "Página principal",
+  "Weather": "Tiempo",
+  "Location": "Localización",
+  "Day": "Día",
+  "Temperature": "Temperatura",
+  "country": "el país",
+  "errorMessage": "no hay tal ciudad",
+  "Forecast": "Pronóstico"
+}
